@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Crear Persona</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <form (ngSubmit)="alertaGuardarPersona()">
+      <div id="container">
+        <ion-item>
+          <ion-label position="floating">Cédula</ion-label>
+          <ion-input type="text"
+                    name="cedula"
+                    [(ngModel)]="persona.cedula"
+                    required></ion-input>
+        </ion-item> 
+      </div>
+      
+      <div id="container">
+        <ion-item>
+          <ion-label position="floating">Nombres</ion-label>
+          <ion-input type="text"
+                    name="nombres"
+                    [(ngModel)]="persona.nombres"
+                    required></ion-input>
+        </ion-item>
+      </div>
+      
+      <div id="container">
+        <ion-item>
+          <ion-label position="floating">Apellidos</ion-label>
+          <ion-input type="text"
+                    name="apellidos"
+                    [(ngModel)]="persona.apellidos"
+                    required></ion-input>
+        </ion-item>
+      </div>
+      
+      <div id="container">
+        <ion-item>
+          <ion-label position="floating">Teléfono</ion-label>
+          <ion-input type="number"
+                    name="telefono"
+                    [(ngModel)]="persona.telefono"
+                    required></ion-input>
+        </ion-item>
+      </div>
+      
+      <div id="container">
+        <ion-item>
+          <ion-label position="floating">Dirección</ion-label>
+          <ion-input type="text"
+                    name="direccion"
+                    [(ngModel)]="persona.direccion"
+                    required></ion-input>
+        </ion-item>
+      </div>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col sizeLg="3" sizeMg="4" sizeXs="6">
+              <button ion-button type="submit" class="btn">Guardar Persona</button>
+          </ion-col>
+          <ion-col sizeLg="3" sizeMg="4" sizeXs="6">
+              <button ion-button [routerLink]="['/personas']" class="btn">Cancelar</button>
+          </ion-col>
+          <ion-col sizeLg="3" sizeMg="4" sizeXs="6">
+            <button ion-button [routerLink]="['/listar-personas']" class="btn">Listar Personas</button>
+        </ion-col>
+        </ion-row>
+      </ion-grid>
+  </form>
+
+</ion-content>

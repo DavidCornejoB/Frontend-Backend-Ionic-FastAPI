@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Listar Personas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="lista">
+    <ion-list>
+      <ion-list-header> LISTA DE PERSONAS OBTENIDA DESDE MARIADB</ion-list-header>
+
+      <ion-item *ngFor="let persona of searchedUser">
+        <ion-label>
+          <h2 class="colorBlue">{{persona.nombres}} {{persona.apellidos}}</h2>
+          <p>cédula: {{persona.cedula}}</p>
+          <p>teléfono: {{persona.telefono}}</p>
+          <p>dirección: {{persona.direccion}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div>
+    <ion-col sizeLg="3" sizeMg="4" sizeXs="6">
+      <button ion-button [routerLink]="['/home']" class="btn">Crear Persona</button>
+  </ion-col>
+  </div>
+
+</ion-content>
